@@ -1,0 +1,24 @@
+# projeto Construindo e Operacionalizando Pipeline de Previsão em Tempo Real
+
+# 1- Certifique-se de ter o Docker Desktop instalado e inicializado.
+
+# 2- Abra um terminal ou prompt de comando, navegue até a pasta com os arquivos e execute o comando abaixo para criar a imagem Docker:
+
+docker compose build --no-cache  (ler o Docker compose, mas cria somente imagem)
+
+# 3- No mesmo terminal ou prompt de comando, execute o comando abaixo para treinar o modelo e salvar os metadados:
+
+docker compose run --rm app python -m app.train
+
+# 4- Agora abra OUTRO terminal ou prompt de comando, navegue até a pasta com os arquivos e execute o comando abaixo para iniciar o container da API:
+
+docker compose up --build   (para ler o Docker compose, se a imagem já existir ele cria somente o container )
+
+# 5- Agora abra OUTRO (sim, o terceiro) terminal ou prompt de comando, navegue até a pasta com os arquivos e execute o comando abaixo para consumir a API:
+
+python client.py 
+
+# Execute de forma alternada os itens 3 e 5 e veja a mágica acontecendo!
+
+
+
